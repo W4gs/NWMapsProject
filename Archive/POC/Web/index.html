@@ -1,0 +1,113 @@
+<html>
+
+<body>
+
+<img id="BaseMap" src="images/BaseMap.png" hidden>
+
+<img id="BW_COV" src="images/Territories/Brightwood/Cov.png" hidden>
+<img id="BW_MAR" src="images/Territories/Brightwood/Mar.png" hidden>
+<img id="BW_SYN" src="images/Territories/Brightwood/Syn.png" hidden>
+<img id="BW_UNK" src="images/Territories/Brightwood/Unk.png" hidden>
+
+<table width="100%">
+<tr>
+	<td width="75%">
+		<canvas id="myCanvas" width="1125" height="792"></canvas>
+	</td>
+	<td>
+		<table width="50%">
+			<tr>
+				<td colspan="2" align="center">
+					<b>Brightwood</b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Owners:
+				</td>
+				<td>
+					<input type="text" id="BW_Owners" name="BW_Owners">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Faction:
+				</td>
+				<td>
+					<select id="BW_Faction" name="BW_Faction">
+						<option value="Cov">Covenant</option>
+						<option value="Mar">Marauder</option>
+						<option value="Syn">Syndicate</option>
+						<option value="Unk" selected>Unknown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button onclick="LoadBase()">Update Image</button>
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
+
+<script>
+var layer_alpha = 0.3;
+
+window.onload = function() {
+	LoadBase();
+}
+
+// Base Map Image
+function LoadBase() {
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.clearRect(0, 0, 1125, 792);
+  
+	var BaseMap = document.getElementById("BaseMap");
+	ctx.globalAlpha = 1;
+	ctx.drawImage(BaseMap, 0, 0);
+	
+	Brightwood(ctx);
+}
+
+// Brightwood Layer
+function Brightwood(ctx) {
+	// Faction Color Logic
+	var e = document.getElementById("BW_Faction");
+	var BW_Owner = e.options[e.selectedIndex].text;
+	ctx.globalAlpha = layer_alpha;
+	switch (BW_Owner) {
+		case "Covenant":
+			var bw_img = document.getElementById("BW_COV");
+			break;
+		
+		case "Marauder":
+			var bw_img = document.getElementById("BW_MAR");
+			break;
+		
+		case "Syndicate":
+			var bw_img = document.getElementById("BW_SYN");
+			break;
+		
+		default:
+			var bw_img = document.getElementById("BW_UNK");
+			break;
+	}
+	ctx.drawImage(bw_img, 0, 0);
+	
+	// Owner Text Logic
+	if (document.getElementById("BW_Owners").value != null) {
+		ctx.globalAlpha = 1;
+		ctx.textAlign = "center";
+		ctx.fillStyle = "white";
+		ctx.font = "Bold 60px Arial";
+		ctx.fillText(document.getElementById("BW_Owners").value, 540, 390);
+	}
+}
+</script>
+
+</body>
+
+</html>

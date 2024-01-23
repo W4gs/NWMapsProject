@@ -1,0 +1,477 @@
+<html>
+
+<head>
+
+<style type="text/css">
+	td {
+		font-size: 18px;
+	}
+</style>
+
+</head>
+
+<body bgcolor="gray">
+
+<img id="Base" src="images/Base/Map.png" hidden>
+<img id="Borders" src="images/Base/Borders.png" hidden>
+<img id="Author" src="images/Base/Author.png" hidden>
+
+<!-- Covenant Images -->
+<img id="BS_COV" src="images/Territories/BS_Cov.png" hidden>
+<img id="BW_COV" src="images/Territories/BW_Cov.png" hidden>
+<img id="CK_COV" src="images/Territories/CK_Cov.png" hidden>
+<img id="EF_COV" src="images/Territories/EF_Cov.png" hidden>
+<img id="ER_COV" src="images/Territories/ER_Cov.png" hidden>
+<img id="FL_COV" src="images/Territories/FL_Cov.png" hidden>
+<img id="MB_COV" src="images/Territories/MB_Cov.png" hidden>
+<img id="MD_COV" src="images/Territories/MD_Cov.png" hidden>
+<img id="RS_COV" src="images/Territories/RS_Cov.png" hidden>
+<img id="RW_COV" src="images/Territories/RW_Cov.png" hidden>
+<img id="WF_COV" src="images/Territories/WF_Cov.png" hidden>
+<img id="WW_COV" src="images/Territories/WW_Cov.png" hidden>
+
+<!-- Syndicate Images -->
+<img id="BS_SYN" src="images/Territories/BS_Syn.png" hidden>
+<img id="BW_SYN" src="images/Territories/BW_Syn.png" hidden>
+<img id="CK_SYN" src="images/Territories/CK_Syn.png" hidden>
+<img id="EF_SYN" src="images/Territories/EF_Syn.png" hidden>
+<img id="ER_SYN" src="images/Territories/ER_Syn.png" hidden>
+<img id="FL_SYN" src="images/Territories/FL_Syn.png" hidden>
+<img id="MB_SYN" src="images/Territories/MB_Syn.png" hidden>
+<img id="MD_SYN" src="images/Territories/MD_Syn.png" hidden>
+<img id="RS_SYN" src="images/Territories/RS_Syn.png" hidden>
+<img id="RW_SYN" src="images/Territories/RW_Syn.png" hidden>
+<img id="WF_SYN" src="images/Territories/WF_Syn.png" hidden>
+<img id="WW_SYN" src="images/Territories/WW_Syn.png" hidden>
+
+<!-- Marauder Images -->
+<img id="BS_MAR" src="images/Territories/BS_Mar.png" hidden>
+<img id="BW_MAR" src="images/Territories/BW_Mar.png" hidden>
+<img id="CK_MAR" src="images/Territories/CK_Mar.png" hidden>
+<img id="EF_MAR" src="images/Territories/EF_Mar.png" hidden>
+<img id="ER_MAR" src="images/Territories/ER_Mar.png" hidden>
+<img id="FL_MAR" src="images/Territories/FL_Mar.png" hidden>
+<img id="MB_MAR" src="images/Territories/MB_Mar.png" hidden>
+<img id="MD_MAR" src="images/Territories/MD_Mar.png" hidden>
+<img id="RS_MAR" src="images/Territories/RS_Mar.png" hidden>
+<img id="RW_MAR" src="images/Territories/RW_Mar.png" hidden>
+<img id="WF_MAR" src="images/Territories/WF_Mar.png" hidden>
+<img id="WW_MAR" src="images/Territories/WW_Mar.png" hidden>
+
+<table width="100%">
+	<tr>
+		<td width="60%">
+			<!-- Original Size: width="1617" height="1651" -->
+			<canvas id="myCanvas" width="1617" height="1651"></canvas>
+		</td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td>
+						Brimstone Owners:
+					</td>
+					<td>
+						<input type="text" id="BS_Owners" name="BS_Owners">
+					</td>
+					<td>
+						Brimstone Faction:
+					</td>
+					<td>
+						<select id="BS_Faction" name="BS_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Brightwood Owners:
+					</td>
+					<td>
+						<input type="text" id="BW_Owners" name="BW_Owners">
+					</td>
+					<td>
+						Brightwood Faction:
+					</td>
+					<td>
+						<select id="BW_Faction" name="BW_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Cutlass Keys Owners:
+					</td>
+					<td>
+						<input type="text" id="CK_Owners" name="CK_Owners">
+					</td>
+					<td>
+						Cutlass Keys Faction:
+					</td>
+					<td>
+						<select id="CK_Faction" name="CK_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Everfall Owners:
+					</td>
+					<td>
+						<input type="text" id="EF_Owners" name="EF_Owners">
+					</td>
+					<td>
+						Everfall Faction:
+					</td>
+					<td>
+						<select id="EF_Faction" name="EF_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Ebonscale Owners:
+					</td>
+					<td>
+						<input type="text" id="ER_Owners" name="ER_Owners">
+					</td>
+					<td>
+						Ebonscale Faction:
+					</td>
+					<td>
+						<select id="ER_Faction" name="ER_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						First Light Owners:
+					</td>
+					<td>
+						<input type="text" id="FL_Owners" name="FL_Owners">
+					</td>
+					<td>
+						First Light Faction:
+					</td>
+					<td>
+						<select id="FL_Faction" name="FL_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Monarch's Bluff Owners:
+					</td>
+					<td>
+						<input type="text" id="MB_Owners" name="MB_Owners">
+					</td>
+					<td>
+						Monarch's Bluff Faction:
+					</td>
+					<td>
+						<select id="MB_Faction" name="MB_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Mourningdale Owners:
+					</td>
+					<td>
+						<input type="text" id="MD_Owners" name="MD_Owners">
+					</td>
+					<td>
+						Mourningdale Faction:
+					</td>
+					<td>
+						<select id="MD_Faction" name="MD_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Restless Shore Owners:
+					</td>
+					<td>
+						<input type="text" id="RS_Owners" name="RS_Owners">
+					</td>
+					<td>
+						Restless Shore Faction:
+					</td>
+					<td>
+						<select id="RS_Faction" name="RS_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Reekwater Owners:
+					</td>
+					<td>
+						<input type="text" id="RW_Owners" name="RW_Owners">
+					</td>
+					<td>
+						Reekwater Faction:
+					</td>
+					<td>
+						<select id="RW_Faction" name="RW_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Weavers Fen Owners:
+					</td>
+					<td>
+						<input type="text" id="WF_Owners" name="WF_Owners">
+					</td>
+					<td>
+						Weavers Fen Faction:
+					</td>
+					<td>
+						<select id="WF_Faction" name="WF_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Windsward Owners:
+					</td>
+					<td>
+						<input type="text" id="WW_Owners" name="WW_Owners">
+					</td>
+					<td>
+						Windsward Faction:
+					</td>
+					<td>
+						<select id="WW_Faction" name="WW_Faction">
+							<option value="Cov">Covenant</option>
+							<option value="Mar">Marauder</option>
+							<option value="Syn">Syndicate</option>
+							<option value="Unk" selected>Unknown</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Server Text</b>
+					</td>
+					<td colspan="2">
+						<input type="text" id="SERVER_id" name="SERVER_id">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Author Text</b>
+					</td>
+					<td colspan="2">
+						<input type="text" id="AUTHOR_id" name="AUTHOR_id">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" align="center"><br><br>
+						<button onclick="renderTerritories()">Update Image</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" align="center"><br><br><br>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" align="center">
+						<a href="https://twitch.tv/lexiru" target="_new"><img src="images/Social/twitch.png" width="20%" height="20%"></a>
+						<a href="https://discord.gg/edgerunners" target="_new"><img src="images/Social/discord.png" width="20%" height="20%"></a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" align="center">
+						<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fnwmap.net&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<script>
+	const LDTerritories = ["BS", "BW", "CK", "EF", "EG", "ER", "FL", "GC", "MB", "MD", "RS", "RW", "SM", "WF", "WW"];
+	var layer_alpha = 1;
+
+	window.onload = function() {
+		document.body.style.zoom = "85%";
+		renderTerritories();
+	}
+
+	// Load Base Map Images
+	function renderTerritories() {
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		ctx.clearRect(0, 0, 1617, 1651);
+		
+		ctx.mozImageSmoothingEnabled = false;
+		ctx.imageSmoothingEnabled = false;
+		
+		// Render Base Images
+		var base_img = document.getElementById("Base");
+		ctx.globalAlpha = 1;
+		ctx.drawImage(base_img, 0, 0);
+		
+		for (const Territory of LDTerritories) {
+			if (document.getElementById(Territory + "_Faction") != undefined) {
+				renderClaimedTerritory(Territory, ctx);
+			}
+		}
+		
+		// Render Support Images
+		var border_img = document.getElementById("Borders");
+		ctx.drawImage(border_img, 0, 0);
+		var author_img = document.getElementById("Author");
+		ctx.drawImage(author_img, 0, 0);
+		// Server 1265 1518
+		ctx.fillStyle = 'White';
+		ctx.font = 'Bold 45px Arial';
+		ctx.textAlign = "start";
+		ctx.fillText(document.getElementById("SERVER_id").value, 1050, 1400);
+		ctx.fillText(document.getElementById("AUTHOR_id").value, 1050, 1450);
+	}
+	
+	function renderClaimedTerritory(thisTerritory, ctx) {
+		// Faction Color Logic
+		var e = document.getElementById(thisTerritory + "_Faction");
+		var thisOwner = e.options[e.selectedIndex].text;
+		ctx.globalAlpha = layer_alpha;
+		switch (thisOwner) {
+			case "Covenant":
+				var tr_img = document.getElementById(thisTerritory + "_COV");
+				ctx.drawImage(tr_img, 0, 0);
+				break;
+			
+			case "Marauder":
+				var tr_img = document.getElementById(thisTerritory + "_MAR");
+				ctx.drawImage(tr_img, 0, 0);
+				break;
+			
+			case "Syndicate":
+				var tr_img = document.getElementById(thisTerritory + "_SYN");
+				ctx.drawImage(tr_img, 0, 0);
+				break;
+			
+			default:
+				break;
+		}
+		
+		// Owner Text Logic
+		if (document.getElementById(thisTerritory + "_Owners").value != "") {
+			
+			ctx.globalAlpha = 1;
+			ctx.textAlign = 'center';
+			ctx.fillStyle = 'White';
+			ctx.font = 'Bold 40px Arial';
+			switch (thisTerritory) {
+				case "BS":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 385, 400);
+					break;
+					
+				case "MD":
+					ctx.font = 'Bold 40px Arial';
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 1460, 450);
+					break;
+					
+				case "RS":
+					ctx.font = 'Bold 40px Arial';
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 1400, 960);
+					break;
+					
+				case "WF":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 1180, 840);
+					break;
+					
+				case "BW":
+					ctx.font = 'Bold 40px Arial';
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 840, 755);
+					break;
+					
+				case "ER":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 465, 840);
+					break;
+					
+				case "EF":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 850, 1000);
+					break;
+					
+				case "MB":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 515, 1180);
+					break;
+					
+				case "WW":
+					ctx.font = 'Bold 40px Arial';
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 822, 1235);
+					break;
+					
+				case "RW":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 1135, 1170);
+					break;
+					
+				case "CK":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 520, 1530);
+					break;
+					
+				case "FL":
+					ctx.fillText(document.getElementById(thisTerritory + "_Owners").value, 815, 1500);
+					break;
+
+				default:
+					break;
+			}
+		}
+	}
+</script>
+
+<p>
+
+</p>
+</body>
+
+</html>

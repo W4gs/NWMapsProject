@@ -1,0 +1,3 @@
+Green:  2ec400
+Yellow: ffd900
+Purple: 9900ff
